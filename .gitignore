@@ -1,0 +1,17 @@
+# Ignora tudo
+*
+
+# Permite o próprio .gitignore
+!.gitignore
+
+# Permite diretórios
+!*/
+
+# Permite a pasta src
+!src/
+
+# Dentro de src, permite só pastas
+!src/**/
+
+# Dentro de src, permite apenas arquivos .java
+!src/**/*.java
