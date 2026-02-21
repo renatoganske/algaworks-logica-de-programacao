@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Exercicio01 {
 
-  static void main() {
+  public static void main(String[] args) {
     System.out.println("Cálculo do Quadrado");
 
     Scanner scanner = new Scanner(System.in);
