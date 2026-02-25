@@ -19,5 +19,7 @@ public class Exercicio03 {
         } else {
             System.out.println("Aluno reprovado!");
         }
+
+        scanner.close();
     }
 }
