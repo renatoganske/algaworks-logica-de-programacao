@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class Exercicio03 {
 
+    public static final int NOTA_MINIMA_PARA_APROVACAO = 70;
+
     public static void main(String[] args) {
         System.out.println("Validação de aprovação de aluno");
 
@@ -12,7 +14,7 @@ public class Exercicio03 {
         System.out.print("Digite a nota do aluno: ");
         Double nota = scanner.nextDouble();
 
-        Boolean aprovado = nota >= 70;
+        Boolean aprovado = nota >= NOTA_MINIMA_PARA_APROVACAO;
 
         if (aprovado) {
             System.out.println("Aluno aprovado!");
