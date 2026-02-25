@@ -20,13 +20,16 @@ public class Exercicio01 {
 
         Integer resultado = null;
 
-        if(operacao.equals("1")) {
+        if (operacao.equals("1")) {
             resultado = numero1 + numero2;
-        } else if(operacao.equals("2")) {
+        }
+        if (operacao.equals("2")) {
             resultado = numero1 - numero2;
-        } else if(operacao.equals("3")) {
+        }
+        if (operacao.equals("3")) {
             resultado = numero1 * numero2;
-        } else if(operacao.equals("4")) {
+        }
+        if (operacao.equals("4")) {
             resultado = numero1 / numero2;
         }
 
