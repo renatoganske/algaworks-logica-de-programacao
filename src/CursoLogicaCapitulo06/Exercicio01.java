@@ -9,7 +9,6 @@ public class Exercicio01 {
             Integer numAtual = numeros[i];
             Integer moduloPorTres = numAtual % 3;
 
-
             if (moduloPorTres.equals(0)) {
 
                 System.out.println("O número " + numAtual + " é divisível por 3.");
