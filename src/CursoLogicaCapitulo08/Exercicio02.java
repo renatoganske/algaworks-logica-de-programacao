@@ -13,14 +13,11 @@ public class Exercicio02 {
 
         imprimir("Escolha dentre os cursos abaixo: ");
 
-        for (int i = 0; i < cursos.length; i++) {
-            imprimir("[" + i + "] " + cursos[i]);
-        }
+        iteraEExibePosicoesDoVetor(cursos);
 
-        System.out.print("O curso que você deseja é o: ");
-        Integer posicaoCursoEscolhido = scanner.nextInt();
+        Integer posicaoCursoEscolhido = receberOpcaoDigitadaPeloUsuario("O curso que você deseja é o: ", scanner);
 
-        Boolean posicaoValida = posicaoCursoEscolhido >= 0 && posicaoCursoEscolhido < cursos.length;
+        Boolean posicaoValida = verificarPosicaoEscolhida(posicaoCursoEscolhido, cursos);
 
         if (!posicaoValida) {
             encerraProgramaPorPosicaoInvalida();
@@ -32,15 +29,11 @@ public class Exercicio02 {
 
         imprimir("Escolha dentre as formas de pagamento abaixo: ");
 
-        for (int i = 0; i < formasPagamento.length; i++) {
-            imprimir("[" + i + "] " + formasPagamento[i]);
-        }
+        iteraEExibePosicoesDoVetor(formasPagamento);
 
-        System.out.print("Sua forma de pagamento escolhida é: ");
-        Integer posicaoFormaPagamentoEscolhida = scanner.nextInt();
+        Integer posicaoFormaPagamentoEscolhida = receberOpcaoDigitadaPeloUsuario("Sua forma de pagamento escolhida é: ", scanner);
 
-        posicaoValida = posicaoFormaPagamentoEscolhida >= 0
-                && posicaoFormaPagamentoEscolhida < formasPagamento.length;
+        posicaoValida = verificarPosicaoEscolhida(posicaoFormaPagamentoEscolhida, formasPagamento);
 
         if (!posicaoValida) {
             encerraProgramaPorPosicaoInvalida();
@@ -56,6 +49,21 @@ public class Exercicio02 {
         scanner.close();
     }
 
+    static Integer receberOpcaoDigitadaPeloUsuario(String texto, Scanner scanner) {
+        imprimirEContinuarNaMesmaLinha(texto);
+        return scanner.nextInt();
+    }
+
+    static Boolean verificarPosicaoEscolhida(Integer posicao, String[] vetor) {
+        return posicao >= 0 && posicao < vetor.length;
+    }
+
+    private static void iteraEExibePosicoesDoVetor(String[] formasPagamento) {
+        for (int i = 0; i < formasPagamento.length; i++) {
+            imprimir("[" + i + "] " + formasPagamento[i]);
+        }
+    }
+
     private static void encerraProgramaPorPosicaoInvalida() {
         System.err.println("Posição inválida!");
         System.exit(1);
@@ -68,5 +76,9 @@ public class Exercicio02 {
 
     static void imprimir(String texto) {
         System.out.println(texto);
+    }
+
+    static void imprimirEContinuarNaMesmaLinha(String texto) {
+        System.out.print(texto);
     }
 }
